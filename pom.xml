@@ -371,27 +371,16 @@
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <maven-surefire-plugin.vertsion>2.21.0</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
-		<jxmpp.version>0.1.0</jxmpp.version>
-		<openfire.version>4.2.0</openfire.version>
-		<smack.version>4.3.0-beta1</smack.version>
+		<jbosh.version>0.9.0</jbosh.version>
+		<smack.version>4.4.0-alpha1</smack.version>
 		<tinder.version>1.3.0</tinder.version>
+		<whack.version>2.0.1</whack.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-omemo -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-omemo</artifactId>
-				<version>4.2.1-beta1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-omemo-signal -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-omemo-signal</artifactId>
-				<version>4.2.1-beta1</version>
-			</dependency>
+			
 
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime/tinder -->
 			<dependency>
@@ -399,204 +388,118 @@
 				<artifactId>tinder</artifactId>
 				<version>${tinder.version}</version>
 			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.whack/core -->
-			<dependency>
-				<groupId>org.igniterealtime.whack</groupId>
-				<artifactId>core</artifactId>
-				<version>2.0.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.whack/sample.weather -->
-			<dependency>
-				<groupId>org.igniterealtime.whack</groupId>
-				<artifactId>sample.weather</artifactId>
-				<version>2.0.1</version>
-			</dependency>
+			
 
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.jbosh/jbosh -->
+			<!-- XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH) -->
 			<dependency>
 				<groupId>org.igniterealtime.jbosh</groupId>
 				<artifactId>jbosh</artifactId>
-				<version>0.9.0</version>
+				<version>${jbosh.version}</version>
 			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime/rest-api-client -->
-			<dependency>
-				<groupId>org.igniterealtime</groupId>
-				<artifactId>rest-api-client</artifactId>
-				<version>1.1.4</version>
-			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.jxmpp/jxmpp-jid -->
-			<dependency>
-				<groupId>org.igniterealtime.jxmpp</groupId>
-				<artifactId>jxmpp-jid</artifactId>
-				<version>${jxmpp.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.jxmpp/jxmpp-core -->
-			<dependency>
-				<groupId>org.igniterealtime.jxmpp</groupId>
-				<artifactId>jxmpp-core</artifactId>
-				<version>${jxmpp.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.jxmpp/jxmpp-util-cache -->
-			<dependency>
-				<groupId>org.igniterealtime.jxmpp</groupId>
-				<artifactId>jxmpp-util-cache</artifactId>
-				<version>${jxmpp.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.jxmpp/jxmpp-stringprep-libidn -->
-			<dependency>
-				<groupId>org.igniterealtime.jxmpp</groupId>
-				<artifactId>jxmpp-stringprep-libidn</artifactId>
-				<version>${jxmpp.version}</version>
-			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.openfire/xmppserver -->
-			<dependency>
-				<groupId>org.igniterealtime.openfire</groupId>
-				<artifactId>xmppserver</artifactId>
-				<version>${openfire.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.openfire/dbutil -->
-			<dependency>
-				<groupId>org.igniterealtime.openfire</groupId>
-				<artifactId>dbutil</artifactId>
-				<version>${openfire.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.openfire/i18n -->
-			<dependency>
-				<groupId>org.igniterealtime.openfire</groupId>
-				<artifactId>i18n</artifactId>
-				<version>${openfire.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.openfire/webadmintld -->
-			<dependency>
-				<groupId>org.igniterealtime.openfire</groupId>
-				<artifactId>webadmintld</artifactId>
-				<version>${openfire.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.openfire/plugins -->
-			<dependency>
-				<groupId>org.igniterealtime.openfire</groupId>
-				<artifactId>plugins</artifactId>
-				<version>${openfire.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
+			
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-android -->
+			<!-- Smack for Android. All the required dependencies to run Smack on Android. 
+				 Usually you want to add additional dependencies like smack-tcp, smack-extensions and smack-experimental.  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-android</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-android-extensions -->
+			<!-- Extra Smack extensions for Android.  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-android-extensions</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-bosh -->
+			<!-- Smack BOSH API. This API is considered beta quality.  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-bosh</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-core -->
+			<!-- Smack core components.  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-core</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-compression-jzlib -->
+			<!-- Compression with jzlib Allow to compress the XMPP stream with help of jzlib.  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-compression-jzlib</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-debug -->
+			<!-- Smack GUI debugger. Inspect the exchanged XMPP stanzas.   -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-debug</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-debug-slf4j -->
+			<!-- Smack slf4j debugger. Inspect the exchanged XMPP stanzas. 
+				 Connect your favourite slf4j backend of choice to get output inside of it  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-debug-slf4j</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-extensions -->
+			<!-- Smack extensions. Classes and methods that implement support for the 
+				various XMPP XEPs (Multi-User Chat, PubSub, …) and other XMPP extensions. -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-extensions</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-experimental -->
+			<!-- Smack experimental extensions. Classes and methods for XEPs that are in status 'experimental' or that should otherwise carefully considered for deployment. 
+				 The API may change even between patch versions. -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-experimental</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-java7 -->
+			<!-- Smack for Java7 (or higher). This is a pseudo-artifact that pulls all 
+				the required dependencies to run Smack on Java 7 (or higher) JVMs. Usually 
+				you want to add additional dependencies to smack-tcp, smack-extensions and 
+				smack-experimental. -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-java7</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-legacy -->
+			<!-- Smack legacy extensions. Usually XEPs in the state 'retracted', 'rejected', 
+				'deprecated', 'obsolete' or in a long standing 'deferred' state. -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-legacy</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-tcp -->
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-omemo -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-tcp</artifactId>
+				<artifactId>smack-omemo</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-omemo-signal -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-omemo-signal</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-im -->
+			<!-- Smack IM. Classes and methods for XMPP-IM (RFC 6121): Roster, Chat and other functionality.  -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-im</artifactId>
-				<version>${smack.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-repl -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-repl</artifactId>
-				<version>${smack.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-resolver-javax -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-resolver-javax</artifactId>
-				<version>${smack.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-resolver-minidns -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-resolver-minidns</artifactId>
-				<version>${smack.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-resolver-dnsjava -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-resolver-dnsjava</artifactId>
-				<version>${smack.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-sasl-javax -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-sasl-javax</artifactId>
-				<version>${smack.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-sasl-provided -->
-			<dependency>
-				<groupId>org.igniterealtime.smack</groupId>
-				<artifactId>smack-sasl-provided</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-integration-test -->
@@ -605,7 +508,73 @@
 				<artifactId>smack-integration-test</artifactId>
 				<version>${smack.version}</version>
 			</dependency>
-
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-repl -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-repl</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-resolver-dnsjava -->
+			<!-- DNS SRV with dnsjava Use dnsjava for DNS SRV lookups. 
+				 For platforms that don't provide the javax.naming API (e.g. Android).  -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-resolver-dnsjava</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-resolver-javax -->
+			<!-- DNS SRV with Java7 Use javax.naming for DNS SRV lookups. 
+				 The javax.naming API is availabe in JavaSE since Java7.  -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-resolver-javax</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-resolver-minidns -->
+			<!-- DNS SRV with minidns Use minidns for DNS SRV lookups. 
+				 For platforms that don't provide the javax.naming API (e.g. Android).  -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-resolver-minidns</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-sasl-javax -->
+			<!-- SASL with javax.security.sasl Use javax.security.sasl for SASL.  -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-sasl-javax</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-sasl-provided -->
+			<!-- SASL with Smack provided code Use Smack provided code for SASL. -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-sasl-provided</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-tcp -->
+			<!-- Smack for standard XMPP connections over TCP.  -->
+			<dependency>
+				<groupId>org.igniterealtime.smack</groupId>
+				<artifactId>smack-tcp</artifactId>
+				<version>${smack.version}</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.whack/core -->
+			<!-- Whack is a Java library that easily allows the creation of external 
+				components that follow the XEP-0114: Jabber Component Protocol.  -->
+			<dependency>
+				<groupId>org.igniterealtime.whack</groupId>
+				<artifactId>core</artifactId>
+				<version>${whack.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.igniterealtime.whack/sample.weather -->
+			<dependency>
+				<groupId>org.igniterealtime.whack</groupId>
+				<artifactId>sample.weather</artifactId>
+				<version>${whack.version}</version>
+			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 
@@ -661,21 +630,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.igniterealtime.whack/sample.weather -->
-		<dependency>
-			<groupId>org.igniterealtime.whack</groupId>
-			<artifactId>sample.weather</artifactId>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.igniterealtime/rest-api-client -->
-		<dependency>
-			<groupId>org.igniterealtime</groupId>
-			<artifactId>rest-api-client</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.igniterealtime.jxmpp</groupId>
-			<artifactId>jxmpp-stringprep-libidn</artifactId>
-		</dependency>
-
+		
 		<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-android -->
 		<dependency>
 			<groupId>org.igniterealtime.smack</groupId>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, vindell (https://github.com/vindell).
+ * Copyright (c) 2018, vindell (https://github.com/vindell).
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -19,7 +19,7 @@ import java.util.Properties;
 
 import org.springframework.boot.autoconfigure.template.AbstractTemplateViewResolverProperties;
 
-public class RythmProperties extends AbstractTemplateViewResolverProperties {
+public class SmackProperties extends AbstractTemplateViewResolverProperties {
 
 	public static final String DEFAULT_TEMPLATE_LOADER_PATH = "classpath:/templates/";
 
@@ -48,7 +48,7 @@ public class RythmProperties extends AbstractTemplateViewResolverProperties {
 	 */
 	private boolean autoCheck = false;
 
-	public RythmProperties() {
+	public SmackProperties() {
 		super(DEFAULT_PREFIX, DEFAULT_SUFFIX);
 	}
 
