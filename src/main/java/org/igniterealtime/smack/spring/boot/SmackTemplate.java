@@ -23,7 +23,6 @@ import java.util.Map;
 
 import org.apache.http.util.TextUtils;
 import org.igniterealtime.smack.spring.boot.connection.XMPPConnectionTemplate;
-import org.igniterealtime.smack.spring.boot.connection.XMPPTCPConnectionManager;
 import org.jivesoftware.smack.MessageListener;
 import org.jivesoftware.smack.SmackException;
 import org.jivesoftware.smack.SmackException.NoResponseException;

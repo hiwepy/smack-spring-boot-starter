@@ -150,7 +150,7 @@ public class XMPPConnectionTemplate {
 	 * @return code
 	 * @code true 修改成功 @code false 修改失败
 	 */
-	public boolean changePassword(String newPassword) {
+	public boolean changePassword(final XMPPTCPConnection connection,String newPassword) {
 		try {
 			AccountManager manager = AccountManager.getInstance(connection);
 			manager.changePassword(newPassword);
@@ -164,7 +164,7 @@ public class XMPPConnectionTemplate {
 	/**
 	 * 获得所有联系人
 	 */
-	public Roster getContact() {
+	public Roster getContact(final XMPPTCPConnection connection) {
 		Roster roster = Roster.getInstanceFor(connection);
 		// 获得所有的联系人组
 		Collection<RosterGroup> groups = roster.getGroups();
@@ -185,7 +185,7 @@ public class XMPPConnectionTemplate {
 	/**
 	 * 一上线获取离线消息 设置登录状态为在线
 	 */
-	private void getOfflineMessage() {
+	private void getOfflineMessage(final XMPPTCPConnection connection) {
 		OfflineMessageManager offlineManager = new OfflineMessageManager(connection);
 		try {
 			List<Message> list = offlineManager.getMessages();
@@ -199,7 +199,7 @@ public class XMPPConnectionTemplate {
 		}
 	}
 
-	public void send() throws IOException, InterruptedException {
+	public void send(final XMPPTCPConnection connection) throws IOException, InterruptedException {
 		try {
 			ChatManager manager = ChatManager.getInstanceFor(connection);
 			EntityBareJid jid = JidCreate.entityBareFrom("azhon@10.104.179.23");
@@ -213,7 +213,7 @@ public class XMPPConnectionTemplate {
 	/**
 	 * 初始化聊天消息监听
 	 */
-	public void initListener(IncomingChatMessageListener listener, OutgoingChatMessageListener outListener) {
+	public void initListener(final XMPPTCPConnection connection, IncomingChatMessageListener listener, OutgoingChatMessageListener outListener) {
 		ChatManager manager = ChatManager.getInstanceFor(connection);
 		// 设置信息的监听
 		manager.addIncomingListener(listener);
@@ -243,7 +243,7 @@ public class XMPPConnectionTemplate {
 	 *            聊天室密码 没有密码则传""
 	 * @return
 	 */
-	public MultiUserChat join(String jid, String nickName, String password) {
+	public MultiUserChat join(final XMPPTCPConnection connection, String jid, String nickName, String password) {
 		try {
 			// 使用XMPPConnection创建一个MultiUserChat窗口
 			MultiUserChat muc = MultiUserChatManager.getInstanceFor(connection)
@@ -274,7 +274,7 @@ public class XMPPConnectionTemplate {
 	/**
 	 * 获取服务器上的所有群组
 	 */
-	private List<HostedRoom> getHostedRoom() {
+	private List<HostedRoom> getHostedRoom(final XMPPTCPConnection connection) {
 		MultiUserChatManager manager = MultiUserChatManager.getInstanceFor(connection);
 		try {
 			// serviceNames->conference.106.14.20.176
@@ -296,7 +296,7 @@ public class XMPPConnectionTemplate {
 	 *            格式为>>群组名称@conference.ip
 	 * @throws XmppStringprepException
 	 */
-	private void initListener(String jid) throws XmppStringprepException {
+	private void initListener(final XMPPTCPConnection connection,String jid) throws XmppStringprepException {
 		MultiUserChat multiUserChat = MultiUserChatManager.getInstanceFor(connection)
 				.getMultiUserChat(JidCreate.entityBareFrom(jid));
 		multiUserChat.addMessageListener(new MessageListener() {
@@ -330,7 +330,7 @@ public class XMPPConnectionTemplate {
 	 * @throws XmppStringprepException
 	 * @throws InterruptedException
 	 */
-	public MultiUserChat createChatRoom(String roomName, String nickName, String password)
+	public MultiUserChat createChatRoom(final XMPPTCPConnection connection,String roomName, String nickName, String password)
 			throws XmppStringprepException, InterruptedException {
 		MultiUserChat muc;
 		try {
@@ -413,7 +413,7 @@ public class XMPPConnectionTemplate {
 	 * @throws NoResponseException
 	 * @throws NotLoggedInException
 	 */
-	public void addFriendListener() throws NotLoggedInException, NoResponseException, XMPPErrorException,
+	public void addFriendListener(final XMPPTCPConnection connection) throws NotLoggedInException, NoResponseException, XMPPErrorException,
 			NotConnectedException, XmppStringprepException, InterruptedException {
 
 		/**
