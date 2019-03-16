@@ -372,15 +372,14 @@
         <maven-surefire-plugin.vertsion>2.22.1</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
 		<jbosh.version>0.9.0</jbosh.version>
-		<smack.version>4.4.0-alpha1</smack.version>
+		<smack.version>4.3.2</smack.version><!-- 4.4.0-alpha1 -->
+		<smack-omemo.version>4.4.0-alpha1</smack-omemo.version>
 		<tinder.version>1.3.0</tinder.version>
 		<whack.version>2.0.1</whack.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-
-			
 
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime/tinder -->
 			<dependency>
@@ -389,7 +388,6 @@
 				<version>${tinder.version}</version>
 			</dependency>
 			
-
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.jbosh/jbosh -->
 			<!-- XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH) -->
 			<dependency>
@@ -487,13 +485,13 @@
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-omemo</artifactId>
-				<version>${smack.version}</version>
+				<version>${smack-omemo.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-omemo-signal -->
 			<dependency>
 				<groupId>org.igniterealtime.smack</groupId>
 				<artifactId>smack-omemo-signal</artifactId>
-				<version>${smack.version}</version>
+				<version>${smack-omemo.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-im -->
 			<!-- Smack IM. Classes and methods for XMPP-IM (RFC 6121): Roster, Chat and other functionality.  -->
