@@ -1,2 +1,2 @@
-# spring-boot-starter-rythm
-rythm starter for spring boot
+# smack-spring-boot-starter
+Spring Boot Starter For Smack
