@@ -58,7 +58,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnClass({ XMPPTCPConnectionConfiguration.class })
 @EnableConfigurationProperties(SmackProperties.class)
-/**\n * Auto-configuration for Smack XMPP client.\n *\n * @author [@Loong Wan](https://github.com/loong10k)\n * @since 1.0.0\n */
+/**\n * Auto-configuration for Smack XMPP client.\n *\n * @author <a href="https://github.com/loong10k">Loong Wan</a>\n * @since 1.0.0\n */
 public class SmackAutoConfiguration {
 
 	private static final Logger logger = LoggerFactory.getLogger(SmackAutoConfiguration.class);

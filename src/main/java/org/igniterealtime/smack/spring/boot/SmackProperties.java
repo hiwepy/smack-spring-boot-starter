@@ -17,15 +17,34 @@ package org.igniterealtime.smack.spring.boot;
 
 import java.util.Properties;
 
-import org.springframework.boot.autoconfigure.template.AbstractTemplateViewResolverProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
-public class SmackProperties extends AbstractTemplateViewResolverProperties {
+/**
+ * Configuration properties for the Smack XMPP template engine.
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
+@ConfigurationProperties(prefix = SmackProperties.SMACK_PREFIX)
+public class SmackProperties {
+
+	public static final String SMACK_PREFIX = "smack";
 
 	public static final String DEFAULT_TEMPLATE_LOADER_PATH = "classpath:/templates/";
 
 	public static final String DEFAULT_PREFIX = "";
 
 	public static final String DEFAULT_SUFFIX = ".httl";
+
+	/**
+	 * Template prefix.
+	 */
+	private String prefix = DEFAULT_PREFIX;
+
+	/**
+	 * Template suffix.
+	 */
+	private String suffix = DEFAULT_SUFFIX;
 
 	/**
 	 * Well-known Beetl keys which will be passed to Beetl's  Configuration.
@@ -42,14 +61,29 @@ public class SmackProperties extends AbstractTemplateViewResolverProperties {
 	 * hot detection of template changes.
 	 */
 	private boolean preferFileSystemAccess = true;
-	
+
 	/**
 	 * 是否自动检查文件是否变动
 	 */
 	private boolean autoCheck = false;
 
 	public SmackProperties() {
-		super(DEFAULT_PREFIX, DEFAULT_SUFFIX);
+	}
+
+	public String getPrefix() {
+		return this.prefix;
+	}
+
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}
+
+	public String getSuffix() {
+		return this.suffix;
+	}
+
+	public void setSuffix(String suffix) {
+		this.suffix = suffix;
 	}
 
 	public Properties getSettings() {

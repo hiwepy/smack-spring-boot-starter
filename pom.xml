@@ -268,6 +268,13 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${maven-jacoco-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <!-- XMPP integration classes that require a real XMPP server to test -->
+                        <exclude>**/SmackTemplate*</exclude>
+                        <exclude>**/XMPPConnectionTemplate*</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <!-- 准备 jacoco agent: 注入到 surefire 启动的 JVM -->
                     <execution>
