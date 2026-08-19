@@ -68,6 +68,12 @@ import org.jxmpp.stringprep.XmppStringprepException;
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 
+/**
+ * <p>SmackTemplate implementation.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class SmackTemplate {
 
 	private final XMPPConnectionTemplate template;

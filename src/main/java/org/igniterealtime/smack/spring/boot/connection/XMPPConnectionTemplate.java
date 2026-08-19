@@ -69,6 +69,12 @@ import org.jxmpp.stringprep.XmppStringprepException;
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 
+/**
+ * <p>XMPPConnectionTemplate implementation.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class XMPPConnectionTemplate {
 
 	private final XMPPTCPConnectionConfiguration configuration;
