@@ -70,26 +70,50 @@ public class SmackProperties {
 	public SmackProperties() {
 	}
 
+    /**
+     * <p>Returns the prefix.</p>
+     * @return the get prefix
+     */
 	public String getPrefix() {
 		return this.prefix;
 	}
 
+    /**
+     * <p>Sets the prefix.</p>
+     * @param prefix
+     */
 	public void setPrefix(String prefix) {
 		this.prefix = prefix;
 	}
 
+    /**
+     * <p>Returns the suffix.</p>
+     * @return the get suffix
+     */
 	public String getSuffix() {
 		return this.suffix;
 	}
 
+    /**
+     * <p>Sets the suffix.</p>
+     * @param suffix
+     */
 	public void setSuffix(String suffix) {
 		this.suffix = suffix;
 	}
 
+    /**
+     * <p>Returns the settings.</p>
+     * @return the get settings
+     */
 	public Properties getSettings() {
 		return this.settings;
 	}
 
+    /**
+     * <p>Sets the settings.</p>
+     * @param settings
+     */
 	public void setSettings(Properties settings) {
 		this.settings = settings;
 	}
@@ -98,22 +122,42 @@ public class SmackProperties {
 		return this.templateLoaderPath;
 	}
 
+    /**
+     * <p>Checks if prefer file system access.</p>
+     * @return the is prefer file system access
+     */
 	public boolean isPreferFileSystemAccess() {
 		return this.preferFileSystemAccess;
 	}
 
+    /**
+     * <p>Sets the prefer file system access.</p>
+     * @param preferFileSystemAccess
+     */
 	public void setPreferFileSystemAccess(boolean preferFileSystemAccess) {
 		this.preferFileSystemAccess = preferFileSystemAccess;
 	}
 
+    /**
+     * <p>Sets the template loader path.</p>
+     * @param templateLoaderPaths
+     */
 	public void setTemplateLoaderPath(String... templateLoaderPaths) {
 		this.templateLoaderPath = templateLoaderPaths;
 	}
 
+    /**
+     * <p>Checks if auto check.</p>
+     * @return the is auto check
+     */
 	public boolean isAutoCheck() {
 		return autoCheck;
 	}
 
+    /**
+     * <p>Sets the auto check.</p>
+     * @param autoCheck
+     */
 	public void setAutoCheck(boolean autoCheck) {
 		this.autoCheck = autoCheck;
 	}

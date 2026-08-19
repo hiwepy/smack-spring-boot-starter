@@ -122,6 +122,9 @@ public class XMPPConnectionTemplate {
 	public void login(final XMPPTCPConnection connection, final String userName, final String password) {
 		new Thread(new Runnable() {
 			@Override
+    /**
+     * <p>Run.</p>
+     */
 			public void run() {
 				try {
 					connection.login(userName, password);
@@ -205,6 +208,10 @@ public class XMPPConnectionTemplate {
 		}
 	}
 
+    /**
+     * <p>Send.</p>
+     * @param connection
+     */
 	public void send(final XMPPTCPConnection connection) throws IOException, InterruptedException {
 		try {
 			ChatManager manager = ChatManager.getInstanceFor(connection);
@@ -307,6 +314,10 @@ public class XMPPConnectionTemplate {
 				.getMultiUserChat(JidCreate.entityBareFrom(jid));
 		multiUserChat.addMessageListener(new MessageListener() {
 			@Override
+    /**
+     * <p>Process message.</p>
+     * @param message
+     */
 			public void processMessage(final Message message) {
 				// 当消息返回为空的时候，表示用户正在聊天窗口编辑信息并未发出消息
 				if (!TextUtils.isEmpty(message.getBody())) {
@@ -438,6 +449,10 @@ public class XMPPConnectionTemplate {
 		StanzaListener listener = new StanzaListener() {
 
 			@Override
+    /**
+     * <p>Process stanza.</p>
+     * @param packet
+     */
 			public void processStanza(Stanza packet)
 					throws NotConnectedException, InterruptedException, NotLoggedInException {
 				DiscoverInfo p = (DiscoverInfo) packet;

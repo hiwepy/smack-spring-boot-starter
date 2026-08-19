@@ -65,12 +65,21 @@ public class SmackAutoConfiguration {
 
 	@Bean
 	@ConditionalOnMissingBean
+    /**
+     * <p>Debugger factory.</p>
+     * @return the debugger factory
+     */
 	public SmackDebuggerFactory debuggerFactory() {
 		return SLF4JDebuggerFactory.INSTANCE;
 	}
 
 	@Bean
 	@ConditionalOnMissingBean
+    /**
+     * <p>X m p p t c p connection configuration.</p>
+     * @param debuggerFactory
+     * @return the x m p p t c p connection configuration
+     */
 	public XMPPTCPConnectionConfiguration XMPPTCPConnectionConfiguration(SmackDebuggerFactory debuggerFactory)
 			throws XmppStringprepException {
 		XMPPTCPConnectionConfiguration config = XMPPTCPConnectionConfiguration.builder()
